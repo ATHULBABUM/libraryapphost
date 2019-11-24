@@ -19,7 +19,8 @@ var nav=[{link:"/",title:'Home'},
             {link:"/books",title:'Books'},
             {link:"/authors",title:'Authors'},
             {link:"/books/add",title:'AddBooks'},
-            {link:"/authors/add",title:"AddAuthors"}];
+            {link:"/authors/add",title:"AddAuthors"},
+            {link:"/books/delete",title:"DeleteBook"}];
 
 const booksRouter=require('./src/routes/bookRoutes')(nav);//passing nav to booksRouter
 const authorRouter=require('./src/routes/authorRouter')(nav);

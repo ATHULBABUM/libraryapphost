@@ -49,6 +49,21 @@ function route(nav) {
            // res.send(req.body);
         })
 
+    booksRouter.route('/delete')
+       .post((req,res)=>{
+           bookModel.deleteOne({bookId:req.body.bookId},(err,data)=>{
+               if(err){
+                   res.json({status:"failed"});
+               }
+               else if(data.n==0){
+                   res.json({status:"not found"});
+               }
+               else{
+                   res.json({status:"success"});
+               }
+           })
+       });
+
     booksRouter.route('/:id')
         .get((req, res) => {
             const id = req.params.id;
