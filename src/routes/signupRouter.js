@@ -4,7 +4,6 @@ var {signupModel}=require('../models/signupModel');
   
 function route(nav){
 
-
     signupRouter.route("/")
     .get((req,res)=>{
         res.render("signup.ejs",{nav,title:"SignUp"});
@@ -20,10 +19,7 @@ function route(nav){
             else{
                 res.send(data);
             }
-
-        });
-
-       
+        });       
     })
     return signupRouter;
 }

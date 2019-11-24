@@ -2,9 +2,7 @@ var express = require('express');
 var loginRouter=express.Router();
 var {signupModel}=require('../models/signupModel');
 
-
 function route(nav){
-
 
     loginRouter.route("/")
     .get((req,res)=>{
@@ -12,7 +10,6 @@ function route(nav){
         {nav,
             title:'LogIn'});
     });
-
 
     loginRouter.route('/save')
     .post((req,res)=>{

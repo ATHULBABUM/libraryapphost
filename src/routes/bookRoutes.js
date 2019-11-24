@@ -7,39 +7,6 @@ var {bookModel}=require('../models/bookModel');
 
 function route(nav) {
     var test=[];
-    // var books = [
-    //     {
-    //         image: "harry.jpga",
-    //         title: "War and peace",
-    //         genre: "Historical Fiction",
-    //         auhtor: "J K Rowlink"
-    //     },
-    //     {
-    //         image: "gully.jpeg",
-    //         title: "Gulliver's Travels ",
-    //         genre: "Fantasy",
-    //         auhtor: "Jonathan Swift"
-    //     },
-    //     {
-    //         image: "hobbit.jpg",
-    //         title: "The Bobbit",
-    //         genre: "Fantasy",
-    //         auhtor: "J R R Tolkien"
-    //     },
-    //     {
-    //         image: "pi.jpg",
-    //         title: "Life of Pi",
-    //         genre: "philosophical novel",
-    //         auhtor: "Yann Martel"
-    //     },
-    //     {
-    //         image: "lord.jpeg",
-    //         title: "The Lord of The Rings",
-    //         genre: "Fantasy",
-    //         auhtor: "J R R Tolkien"
-    //     },
-    // ];
-
 
     booksRouter.route('/')
         .get((req, res) => {
@@ -55,10 +22,7 @@ function route(nav) {
                         books:data
                     })
                     }
-
-            })
-
-       
+            })       
         });
 
     booksRouter.route('/add')
@@ -81,12 +45,9 @@ function route(nav) {
                         res.json({status:"success"});
                 }
             });
-
             //res.send("form submitted")
            // res.send(req.body);
         })
-
-
 
     booksRouter.route('/:id')
         .get((req, res) => {
@@ -96,12 +57,8 @@ function route(nav) {
                 title: "Book",
                 book: test[id]
             })
-
         });
-
-
 
     return booksRouter;
 }
-
 module.exports = route;
