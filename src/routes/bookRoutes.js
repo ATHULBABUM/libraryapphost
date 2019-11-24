@@ -50,6 +50,12 @@ function route(nav) {
         })
 
     booksRouter.route('/delete')
+     .get((req,res)=>{
+         res.render('bookDelete.ejs',{
+             nav,title:"Delete Books"
+         })
+     })
+     booksRouter.route('/delete/one')
        .post((req,res)=>{
            bookModel.deleteOne({bookId:req.body.bookId},(err,data)=>{
                if(err){
